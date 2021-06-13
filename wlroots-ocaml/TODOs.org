@@ -1,0 +1,34 @@
+* Notes
+** Note that xkbcommon keymap creation changed upstream in v0.13.0.
+   We should keep this in mind.
+   - Patches upstream (to ocaml-xkbcommon) may be required
+   <2021-05-09 Sun>
+* Todos
+** DONE [2021-05-16 Sun 15:14] Finish prcoess_cursor_motion
+:LOGBOOK:
+CLOCK: [2021-05-16 Sun 15:18]--[2021-05-16 Sun 16:56] =>  1:38
+:END:
+** TODO [2021-05-16 Sun 14:29] Finish output_frame
+   [[file:./tinywl/tinywl.ml::failwith "output_frame"]]
+** DONE [2021-05-16 Sun 14:30] Finish server_cursor_motion_absolute
+   [[file:./tinywl/tinywl.ml::failwith "server_cursor_motion_absolute"]]
+** DONE [2021-05-16 Sun 14:31] Finish server_cursor_button
+   [[file:./tinywl/tinywl.ml::let server_cursor_button _st _ _ =]]
+** DONE [2021-05-16 Sun 14:31] Finish server_cursor_axis
+   [[file:./tinywl/tinywl.ml::let server_cursor_axis _st _ _ =]]
+** DONE [2021-05-16 Sun 14:31] Finish server_cursor_frame
+   [[file:./tinywl/tinywl.ml::let server_cursor_frame _st _ _ =]]
+** DONE [2021-05-16 Sun 18:28] Make sure our fixme comment is fixed here
+   [[file:./tinywl/tinywl.ml::(* Might need to make mapped true in this guy *)]]
+** TODO [2021-05-16 Sun 19:36] Check if perhaps our timespec woes can be solved by switching libraries
+   A library called ocaml-posix seems to be emerging to replace this
+   [[file:./wlroots.opam::"unix-time"]]
+   [[file:./ffi/ffi.ml::(* time *)]]
+** TODO [2021-05-25 Tue 16:09] Write a ctypes view for Box.t so the c and ocaml types can be used interchangeably.
+   [[file:~/projects/wlroots-ocaml/lib/box.ml::type t = { x : int; y : int; width : int; height : int }]]
+** TODO [2021-05-25 Tue 21:48] Make sure ptr double will suffice for ~const float matrix[static 9]~
+   [[file:./ffi/ffi.ml::wlr_renderer_p @-> wlr_texture_p @-> ptr double @-> double @-> returning bool]]
+   (pardon the link to my personal computer path, here. this is the link to the wlroots c definition)
+   [[file:~/projects/wlroots/include/wlr/render/wlr_renderer.h::bool wlr_render_texture_with_matrix(struct wlr_renderer *r,]]
+** TODO [2021-05-25 Tue 22:19] Need to do some wrapping up of libpixman, it seems
+   [[./ffi/ffi.ml::This is only ok because so far, no one uses it. *)]]
