@@ -1,0 +1,40 @@
+#+TITLE: The Wayland Book
+* Introduction
+** High-level design
+We're trying to build the thing that handles all of that tricky IO with users.
+
+/Wayland compositor/ is responsible for handling input events.
+
+/Wayland clients/ get sent the information and display their windows on an appropriate output device.
+** Hardware
+Low-level, difficult, boring.
+
+Only one thing should bother talking directly to it, the kernel.
+** The Kernel
+Builds good abstractions for users to work with the hardware.
+For rendering the system we deal with is the /direct rendering manager/ or the *DRM*.
+
+An import subsystem of DRM we'll work with is the /kernel mode setting/ or *KMS*.
+This enumerates displays and their settings, such as resolution.
+
+*evdev* abstracts input devices.
+
+Most Most kernel interfaces are available through /dev files.
+* Protocol design
+* libwayland in depth
+* The Wayland display
+* Globals & the registry
+* Buffers & surfaces
+* XDG shell basics
+* Surfaces in depth
+* Seats: handling input
+* SDG shell in depth
+* Clipboard access
+* Protocol extensions
+* Glossary
+** Wayland Compositor
+** Wayland Client
+** Kernel
+** Direct Rendering Manager
+** Kernel Mode Setting
+** evdev
