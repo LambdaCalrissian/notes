@@ -1,1 +1,8 @@
 * Notes
+
+** Wayland proper is hosted on https://gitlab.freedesktop.org
+
+** Want to make the compositor struct more usable.
+   [[https://dev.realworldocaml.org/foreign-function-interface.html][Using the CTypes Ocaml library]]
+
+** hikari may be a good example https://hub.darcs.net/raichoo/hikari
